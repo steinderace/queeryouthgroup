@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import QYGLogo from '../assets/QYGpng.png'
+import QYGLogo from '../assets/qyg-logo.svg'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
