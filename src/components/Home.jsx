@@ -1,12 +1,14 @@
 import React from 'react'
 
+import LandingPageImage from '../assets/images/3.-Nepal-Pride-Parade-2019.jpg'
+
 const Home = () => {
   return (
     <div className="w-full flex flex-col flex-grow">
         <div className='p-4 flex flex-row items-center bg-[#d41367]/36 gap'>
             {/* Left side - image */}
             <div className="bg-white w-1/2">
-                <img src="src/assets/images/3.-Nepal-Pride-Parade-2019.jpg" alt="homepage-image" className="w-full h-full object-cover"/>
+                <img src={LandingPageImage} alt="homepage-image" className="w-full h-full object-cover"/>
             </div>
 
             {/* Right side - text*/}
