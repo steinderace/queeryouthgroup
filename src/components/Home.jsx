@@ -5,7 +5,7 @@ import LandingPageImage from '../assets/images/3.-Nepal-Pride-Parade-2019.jpg'
 const Home = () => {
   return (
     <div className="w-full flex flex-col flex-grow">
-        <div className='p-4 flex flex-row items-center bg-[#d41367]/36 gap'>
+        <div className='p-4 flex flex-col min-[1200px]:flex-row items-center bg-[#d41367]/36 gap-4'>
             {/* Left side - image */}
             <div className="bg-white w-1/2">
                 <img src={LandingPageImage} alt="homepage-image" className="w-full h-full object-cover"/>
@@ -21,7 +21,7 @@ const Home = () => {
         <div className="p-4 flex flex-row items-center bg-[#e0e5f5]">
             Something something goes here
         </div>
-        <div className="p-4 flex flex-row items-center bg-[#d41367]/36">
+        <div className="p-4 flex flex-row items-center bg-[#b4ded1]/36">
             Something something goes here
         </div>
         <div className="p-4 flex flex-row items-center bg-[#f5efe0]">

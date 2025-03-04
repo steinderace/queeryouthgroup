@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#E0E5F5] py-6">
+    <footer className="bg-[#cccffe] py-6">
         <div className="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           {/* Footer links and content goes here */}
         </div>
