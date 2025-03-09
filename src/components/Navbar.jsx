@@ -8,12 +8,13 @@ const Navbar = () => {
 
     return (
         <nav className="bg-[#F5EFE0] h-20 border-gray-200 flex items-center">
-            <div className="max-w-screen-xl flex w-full items-center justify-between mx-auto px-4"> {/* Use w-full */}
-                
-                {/* Logo and Title */}
-                <div className="flex items-center space-x-3">
-                <img src={QYGLogo} className="h-16 w-auto" alt="QYG Logo" />
-                <span className="text-2xl font-medium text-[#D41367] whitespace-nowrap font-alegreya-sans">Queer Youth Group</span>
+            <div className="w-full flex items-center justify-between mx-auto px-4"> 
+                {/* Logo and Title (Aligned Left) */}
+                <div className="flex items-center space-x-3 justify-start">
+                    <img src={QYGLogo} className="h-16 w-auto" alt="QYG Logo" />
+                    <span className="text-2xl font-medium text-[#D41367] whitespace-nowrap font-alegreya-sans">
+                        Queer Youth Group
+                    </span>
                 </div>
 
                 {/* Burger menu for collapse */}
@@ -28,33 +29,31 @@ const Navbar = () => {
                 </button>
 
                 {/* Navbar links */}
-                <div className={
-                    `transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"} min-[1200px]:flex items-center`
-                    }> 
-                    {/* Ensure `items-center` here */}
+                <div className={`transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"} min-[1200px]:flex items-center`}> 
                     <ul className="flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse">
                         {[
-                        { path: "/about", label: "About Us" },
-                        { path: "/contact", label: "Contact Us" },
-                        { path: "/blog", label: "Blog" },
-                        { path: "/donate", label: "Donate" },
-                        { path: "/services", label: "Our Services" },
-                        { path: "/team", label: "Our Team" },
-                        { path: "/resources", label: "Resources" }
+                            { path: "/about", label: "About Us" },
+                            { path: "/contact", label: "Contact Us" },
+                            { path: "/blog", label: "Blog" },
+                            { path: "/donate", label: "Donate" },
+                            { path: "/services", label: "Our Services" },
+                            { path: "/team", label: "Our Team" },
+                            { path: "/resources", label: "Resources" }
                         ].map(({ path, label }) => (
-                        <li key={path}>
-                            <Link 
-                            to={path} 
-                            className="block py-2 px-3 text-[#D41367] rounded-md transition duration-300 ease-in-out hover:bg-[#D41367] hover:text-white"
-                            >
-                            {label}
-                            </Link>
-                        </li>
+                            <li key={path}>
+                                <Link 
+                                    to={path} 
+                                    className="block py-2 px-3 text-[#D41367] rounded-md transition duration-300 ease-in-out hover:bg-[#D41367] hover:text-white"
+                                >
+                                    {label}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                 </div>
             </div>
         </nav>
+
     )
 }
 
