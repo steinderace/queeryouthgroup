@@ -1,30 +1,13 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
-// Import Swiper styles 
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation' 
-
-import LandingPageImage from '../assets/images/3.-Nepal-Pride-Parade-2019.jpg'
+import Slideshow from './Slideshow'
 
 const Home = () => {
   return (
     <div className="w-full flex flex-col flex-grow">
         {/* First container - image and welcome */}
         <div className='p-4 flex flex-col min-[1200px]:flex-row items-center bg-[#d41367]/36 gap-4'>
-            {/* Left side - image */}
-            <div className="bg-white w-full min-[1200px]:w-1/2 aspect-[16/9] overflow-hidden gap-0">
-                <img src={LandingPageImage} alt="homepage-image" className="w-full h-full object-cover"/>
-            </div>
-
-            {/* Right side - text*/}
-            <div className="w-1/2 flex justify-center items-center p-8">
-                <h2 className="text-white text-3xl font-semibold font-amesthysta">
-                    Welcome to <br/> Queer Youth Group Nepal
-                </h2>
-            </div>
+            <SlideShow />
         </div>
 
         {/* Second container - containing books written, etc */}
