@@ -29,12 +29,13 @@ const Navbar = () => {
                 </button>
 
                 {/* Navbar links */}
+                {/* Navbar links */}
                 <div 
                     className={`${
                         isOpen ? "flex" : "hidden"
-                    } min-[1200px]:flex flex-col min-[1200px]:flex-row min-[1200px]:static absolute left-0 top-full w-full bg-[#F5EFE0] shadow-md min-[1200px]:shadow-none transition-all duration-300 ease-in-out`}
+                    } min-[1200px]:flex flex-col min-[1200px]:flex-row min-[1200px]:static absolute left-0 top-full w-full bg-[#F5EFE0] shadow-md min-[1200px]:shadow-none transition-all duration-300 ease-in-out min-[1200px]:ml-auto`}
                 > 
-                    <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-8 rtl:space-x-reverse">
+                    <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-8 rtl:space-x-reverse items-center">
                         {[
                             { path: "/about", label: "About Us" },
                             { path: "/contact", label: "Contact Us" },
