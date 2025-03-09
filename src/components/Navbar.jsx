@@ -15,7 +15,7 @@ const Navbar = () => {
                         to="/" 
                         className="flex items-center space-x-3 hover:text-[#D41367] transition-colors"
                     >
-                        <img src={QYGLogo} className="h-16 w-auto" alt="QYG Logo" />
+                        <img src={QYGLogo} className="h-8 w-auto" alt="QYG Logo" />
                         <span className="text-2xl font-medium text-[#D41367] whitespace-nowrap font-alegreya-sans">
                             Queer Youth Group
                         </span>
