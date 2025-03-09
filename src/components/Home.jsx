@@ -1,4 +1,11 @@
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
+// Import Swiper styles 
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation' 
 
 import LandingPageImage from '../assets/images/3.-Nepal-Pride-Parade-2019.jpg'
 
