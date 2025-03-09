@@ -7,7 +7,7 @@ const Home = () => {
     <div className="w-full flex flex-col flex-grow">
         {/* First container - image and welcome */}
         <div className='p-4 flex flex-col min-[1200px]:flex-row items-center bg-[#d41367]/36 gap-4'>
-            <SlideShow />
+            <Slideshow />
         </div>
 
         {/* Second container - containing books written, etc */}

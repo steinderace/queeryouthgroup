@@ -1,5 +1,5 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 // Import Swiper styles 
@@ -9,8 +9,8 @@ import 'swiper/css/navigation'
 
 // Import your images (replace with your actual image paths)
 import Image1 from '../assets/images/3.-Nepal-Pride-Parade-2019.jpg'
-import Image2 from '../assets/images/4.-Nepal-Pride-Parade-2019'
-import Image3 from '../assets/images/2.-Trans-Pride-Parade-2020'
+import Image2 from '../assets/images/4.-Nepal-Pride-Parade-2019.jpg'
+import Image3 from '../assets/images/2.-Trans-Pride-Parade-2020.jpg'
 import Image4 from '../assets/images/IMG_6795.jpg'
 import Image5 from '../assets/images/IMG_5290.jpg'
 
