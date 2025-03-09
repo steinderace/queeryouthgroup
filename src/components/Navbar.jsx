@@ -11,12 +11,15 @@ const Navbar = () => {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 {/* Logo and Burger */}
                 <div className="flex items-center justify-between w-full min-[1200px]:w-auto">
-                    <div className="flex items-center space-x-3">
+                    <Link 
+                        to="/" 
+                        className="flex items-center space-x-3 hover:text-[#D41367] transition-colors"
+                    >
                         <img src={QYGLogo} className="h-16 w-auto" alt="QYG Logo" />
                         <span className="text-2xl font-medium text-[#D41367] whitespace-nowrap font-alegreya-sans">
                             Queer Youth Group
                         </span>
-                    </div>
+                    </Link>
                     <button 
                         onClick={() => setIsOpen(!isOpen)}
                         className="min-[1200px]:hidden inline-flex items-center justify-center p-2 w-10 h-10 text-[#D41367] rounded-lg hover:bg-[#D41367] hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -38,8 +41,9 @@ const Navbar = () => {
                     min-[1200px]:max-h-none min-[1200px]:opacity-100
                     bg-[#F5EFE0] z-50
                 `}>
-                    <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-8 py-4 min-[1200px]:py-0">
+                    <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-1 py-4 min-[1200px]:py-0">
                         {[
+                            { path: "/", label: "Home"},
                             { path: "/about", label: "About Us" },
                             { path: "/contact", label: "Contact Us" },
                             { path: "/blog", label: "Blog" },
