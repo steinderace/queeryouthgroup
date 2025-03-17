@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import QYGLogo from '../assets/qyg-logo.svg';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false); // For mobile menu
+    const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); // For desktop dropdown
 
     return (
         <nav className="bg-[#F5EFE0] border-gray-200 relative">
@@ -43,21 +44,61 @@ const Navbar = () => {
                     <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-1 py-4 min-[1200px]:py-0">
                         {[
                             { path: "/", label: "Home"},
-                            { path: "/about", label: "About Us" },
+                            { 
+                                path: "/about", 
+                                label: "About Us ▾",
+                                dropdown: [
+                                    { path: "/about/introduction", label: "Introduction" },
+                                    { path: "/about/history", label: "History" },
+                                    { path: "/about/objectives", label: "Objectives" },
+                                    { path: "/about/our-values", label: "Our Values" },
+                                    { path: "/about/our-movement", label: "Our Movement" }
+                                ]
+                            },
                             { path: "/team", label: "Our Team" },
                             { path: "/research", label: "Research" },
                             { path: "/resources", label: "Legal Resources" },
                             { path: "/litigations", label: "Litigations" },
                             { path: "/publications", label: "Publication" },
                             { path: "/dictionary", label: "Dictionary" }
-                        ].map(({ path, label }) => (
-                            <li key={path}>
+                        ].map(({ path, label, dropdown }) => (
+                            <li 
+                                key={path} 
+                                className="relative"
+                                onMouseEnter={() => dropdown && setIsAboutDropdownOpen(true)} // Show dropdown on hover (desktop)
+                                onMouseLeave={() => dropdown && setIsAboutDropdownOpen(false)} // Hide dropdown on hover out (desktop)
+                            >
                                 <Link 
                                     to={path} 
                                     className="block py-2 px-3 text-[#D41367] rounded-md transition duration-300 ease-in-out hover:bg-[#D41367] hover:text-white"
+                                    onClick={(e) => {
+                                        if (dropdown) {
+                                            e.preventDefault(); // Prevent navigation for dropdown toggle
+                                            setIsAboutDropdownOpen(!isAboutDropdownOpen); // Toggle dropdown for mobile
+                                        }
+                                    }}
                                 >
                                     {label}
                                 </Link>
+                                {dropdown && (
+                                    <ul className={`
+                                        pl-4 min-[1200px]:pl-0 min-[1200px]:absolute min-[1200px]:top-full min-[1200px]:left-0 min-[1200px]:bg-[#F5EFE0] min-[1200px]:shadow-lg
+                                        transition-all duration-300 ease-in-out 
+                                        ${isAboutDropdownOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
+                                        min-[1200px]:max-h-none min-[1200px]:opacity-100
+                                    `}>
+                                        {dropdown.map(({ path: dropdownPath, label: dropdownLabel }) => (
+                                            <li key={dropdownPath}>
+                                                <Link 
+                                                    to={dropdownPath} 
+                                                    className="block py-2 px-3 text-[#D41367] rounded-md transition duration-300 ease-in-out hover:bg-[#D41367] hover:text-white"
+                                                >
+                                                    {dropdownLabel}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </li>
                         ))}
                     </ul>
