@@ -17,7 +17,7 @@ import Image5 from '../assets/images/IMG_5290.jpg'
 
 const Slideshow = () => {
     return (
-        <div className="relative h-screen w-full">
+        <div className="relative h-[70vh] w-full">
           {/* Slideshow */}
           <Swiper
             spaceBetween={0}
@@ -71,8 +71,8 @@ const Slideshow = () => {
           </Swiper>
     
           {/* Site Title Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-            <h1 className="text-6xl md:text-8xl font-bold text-white text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-opacity-20 z-10">
+            <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
               Queer Youth Group
             </h1>
           </div>
