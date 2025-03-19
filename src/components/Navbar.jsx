@@ -4,7 +4,7 @@ import QYGLogo from '../assets/qyg-logo.svg';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false); // For mobile menu
-    const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); // For desktop dropdown
+    const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); // For dropdown
 
     return (
         <nav className="bg-[#F5EFE0] border-gray-200 relative">
@@ -37,7 +37,7 @@ const Navbar = () => {
                     min-[1200px]:flex 
                     transition-all duration-300 ease-in-out 
                     overflow-hidden 
-                    ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
+                    ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
                     min-[1200px]:max-h-none min-[1200px]:opacity-100
                     bg-[#F5EFE0] z-50
                 `}>
@@ -65,8 +65,6 @@ const Navbar = () => {
                             <li 
                                 key={path} 
                                 className="relative"
-                                onMouseEnter={() => dropdown && setIsAboutDropdownOpen(true)} // Show dropdown on hover (desktop)
-                                onMouseLeave={() => dropdown && setIsAboutDropdownOpen(false)} // Hide dropdown on hover out (desktop)
                             >
                                 <Link 
                                     to={path} 
@@ -74,7 +72,7 @@ const Navbar = () => {
                                     onClick={(e) => {
                                         if (dropdown) {
                                             e.preventDefault(); // Prevent navigation for dropdown toggle
-                                            setIsAboutDropdownOpen(!isAboutDropdownOpen); // Toggle dropdown for mobile
+                                            setIsAboutDropdownOpen(!isAboutDropdownOpen); // Toggle dropdown
                                         }
                                     }}
                                 >
