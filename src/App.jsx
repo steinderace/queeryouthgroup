@@ -22,7 +22,7 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <BrowserRouter>
         <Navbar />
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-grow w-full'>
           <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/introduction' element={<Intro />}/>

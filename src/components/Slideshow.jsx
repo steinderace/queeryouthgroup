@@ -78,7 +78,7 @@ const Slideshow = () => {
 
             {/* Site Title Overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-opacity-20 z-10">
-                <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
+                <h1 className="text-4xl md:text-6xl font-bold text-white text-center text-shadow">
                     Queer Youth Group
                 </h1>
             </div>

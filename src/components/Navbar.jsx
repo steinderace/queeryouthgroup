@@ -48,11 +48,11 @@ const Navbar = () => {
                                 path: "/about", 
                                 label: "About Us ▾",
                                 dropdown: [
-                                    { path: "/about/introduction", label: "Introduction" },
-                                    { path: "/about/history", label: "History" },
-                                    { path: "/about/objectives", label: "Objectives" },
-                                    { path: "/about/our-values", label: "Our Values" },
-                                    { path: "/about/our-movement", label: "Our Movement" }
+                                    { path: "/introduction", label: "Introduction" },
+                                    { path: "/history", label: "History" },
+                                    { path: "/objectives", label: "Objectives" },
+                                    { path: "/our-values", label: "Our Values" },
+                                    { path: "/our-movement", label: "Our Movement" }
                                 ]
                             },
                             { path: "/team", label: "Our Team" },
