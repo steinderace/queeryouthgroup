@@ -2,6 +2,27 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import QYGLogo from '../assets/qyg-logo.svg';
 
+const listOfLinks = [
+    { path: "/", label: "Home"},
+    { 
+        path: "/about", 
+        label: "About Us ▾",
+        dropdown: [
+            { path: "/introduction", label: "Introduction" },
+            { path: "/history", label: "History" },
+            { path: "/objectives", label: "Objectives" },
+            { path: "/our-values", label: "Our Values" },
+            { path: "/our-movement", label: "Our Movement" }
+        ]
+    },
+    { path: "/team", label: "Our Team" },
+    { path: "/research", label: "Research" },
+    { path: "/resources", label: "Legal Resources" },
+    { path: "/litigations", label: "Litigations" },
+    { path: "/publications", label: "Publication" },
+    { path: "/dictionary", label: "Dictionary" }
+];
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false); // For mobile menu
     const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false); // For dropdown
@@ -42,26 +63,7 @@ const Navbar = () => {
                     bg-[#F5EFE0] z-50
                 `}>
                     <ul className="flex flex-col min-[1200px]:flex-row min-[1200px]:space-x-1 py-4 min-[1200px]:py-0">
-                        {[
-                            { path: "/", label: "Home"},
-                            { 
-                                path: "/about", 
-                                label: "About Us ▾",
-                                dropdown: [
-                                    { path: "/introduction", label: "Introduction" },
-                                    { path: "/history", label: "History" },
-                                    { path: "/objectives", label: "Objectives" },
-                                    { path: "/our-values", label: "Our Values" },
-                                    { path: "/our-movement", label: "Our Movement" }
-                                ]
-                            },
-                            { path: "/team", label: "Our Team" },
-                            { path: "/research", label: "Research" },
-                            { path: "/resources", label: "Legal Resources" },
-                            { path: "/litigations", label: "Litigations" },
-                            { path: "/publications", label: "Publication" },
-                            { path: "/dictionary", label: "Dictionary" }
-                        ].map(({ path, label, dropdown }) => (
+                        {listOfLinks.map(({ path, label, dropdown }) => (
                             <li 
                                 key={path} 
                                 className="relative"
